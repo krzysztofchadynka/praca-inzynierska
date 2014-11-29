@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2" method="upgrade">
+ 
+        <name>Guestbook1</name>
+        <creationDate>October 2014</creationDate>
+        <author>Krzysztof Chadynka</author>
+        <authorEmail>krzysztof.chadynka@gmail.com</authorEmail>
+        <authorUrl>http://www.example.org</authorUrl>
+        <copyright>Copyright Info</copyright>
+        <license>License Info</license>
+        <version>0.0.1</version>
+        <description>Wpisy zarejestrowanych uzytkowników</description>
+ 
+ 		<install>
+ 			<sql>
+ 				<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+ 			</sql>
+ 		</install>
+ 		
+ 		<uninstall>
+ 			<sql>
+ 				<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+ 			</sql>
+ 		</uninstall>
+ 
+        <update> <!-- Runs on update; New since J2.5 -->
+                <schemas>
+                        <schemapath type="mysql">sql/updates/mysql/</schemapath>
+                </schemas>
+        </update>
+        
+        <files folder="site">
+                <filename>index.html</filename>
+                <filename>guestbook_1.php</filename>
+        </files>
+ 
+        <administration>
+                <!-- Administration Menu Section -->
+                <menu>Guestbook</menu>
+                <files folder="admin">
+                        <!-- Admin Main File Copy Section -->
+                        <filename>index.html</filename>
+                        <filename>guestbook_1.php</filename>
+                        <!-- SQL files section -->
+                        <folder>sql</folder>
+                </files>
+        </administration>
+ 
+</extension>
