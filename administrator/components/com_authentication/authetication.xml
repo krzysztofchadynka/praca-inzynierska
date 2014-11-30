@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2.0" method="upgrade">
+	<name>Authentication</name>
+	<creationDate>December 2014</creationDate>
+	<author>Krzysztof Chadynka</author>
+	<authorEmail>krzysztof.chadynka@gmail.org</authorEmail>
+	<authorUrl>http://www.example.org</authorUrl>
+	<copyright>Krzysztof Chadynka</copyright>
+	<license>Freeware</license>
+	<version>1.0</version>
+	<description></description>
+	
+	<install> 
+	    <sql>
+        	<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+	    </sql>
+	</install>
+	<uninstall>
+      <sql>
+      	<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+      </sql>
+	</uninstall>
+	<update> 
+       <schemas>
+       	<schemapath type="mysql">sql/updates/mysql</schemapath>
+       </schemas>
+	</update>
+	
+	<files folder="site">
+	    <filename>index.html</filename>
+	    <filename>authetication.php</filename>
+	    <filename>controller.php</filename>
+	    <folder>views</folder>
+	    <folder>models</folder>
+	</files>
+	
+	<administration>
+	    <menu>Authetication</menu>
+	    <files folder="admin">
+	        <filename>index.html</filename>
+	        <filename>authetication.php</filename>
+	        <folder>sql</folder>
+	        <folder>tables</folder>
+	        <folder>models</folder>
+	    </files>
+	</administration>
+</extension>
